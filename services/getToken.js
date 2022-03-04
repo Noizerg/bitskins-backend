@@ -7,6 +7,7 @@ function getCode() {
 }
 
 function getToken() {
+  console.log('apikey', apikey);
   return { code: getCode(), apikey };
 }
 

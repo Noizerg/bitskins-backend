@@ -2,7 +2,10 @@ const { sharedSecret, apiKey } = require('../env.js');
 
 const Bitskins = require('bitskins');
 
-const bitskins = new Bitskins.API(apiKey, sharedSecret);
+const bitskins = new Bitskins.API(
+  process.env.BIT_TOKEN,
+  process.env.BIT_SHARED
+);
 //const sockets = new BitSkins.WebSocket();
 const bitskinsApi = {};
 

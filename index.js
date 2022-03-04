@@ -8,8 +8,8 @@ const auth = require('./routes/auth');
 const users = require('./routes/users');
 const mongoose = require('mongoose');
 const winston = require('winston');
+const bitskinsAccount = require('./bitskins_login/index');
 require('dotenv').config();
-const DB_CONNECTION = '';
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -32,7 +32,6 @@ app.get('/api/getRawPriceData/:hash_name', async (req, res) => {
 
 app.use('/api/users', users);
 app.use('/api/auth', auth);
-
 mongoose
   .connect(process.env.DB_CONNECTION)
   .then(() => winston.info(`Connected to DB...`));
@@ -40,3 +39,5 @@ mongoose
 app.listen(9005, () => {
   console.log('Node server started on port 9005.');
 });
+
+//bitskinsAccount.getAccountBalance();
