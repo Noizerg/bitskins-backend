@@ -19,6 +19,11 @@ bitskinsApi.getAllItemPrices = async () => {
   return result;
 };
 
+bitskinsApi.getAccountInventory = async () => {
+  const result = await bitskins.getAccountInventory();
+  return result;
+};
+
 bitskinsApi.getRawPriceData = async (hash_name) => {
   console.log('Start');
   const result = await bitskins.getRawPriceData(hash_name);

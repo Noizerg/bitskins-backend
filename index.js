@@ -25,6 +25,11 @@ app.get('/api/balance', async (req, res) => {
 app.get('/api/allItems', async (req, res) => {
   res.json(await bitskins.getAllItemPrices());
 });
+
+app.get('/api/getAccountInventory', async (req, res) => {
+  res.json(await bitskins.getAccountInventory());
+});
+
 app.get('/api/getRawPriceData/:hash_name', async (req, res) => {
   console.log(req.params.hash_name);
   res.json(await bitskins.getRawPriceData(req.params.hash_name));
